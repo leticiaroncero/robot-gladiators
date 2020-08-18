@@ -9,7 +9,7 @@ var enemyHealth = 50;
 var enemyAttack = 12;
 
 var fight = function (enemyName) {
-  while (enemyHealth > 0) {
+  while (enemyHealth > 0 && playerHealth > 0) {
     var promptFight = window.prompt("Would you like to FIGHT or SKIP this battle? Enter 'FIGHT' or 'SKIP' to choose.");
     // if player choses to fight, then fight
     if (promptFight === "fight" || promptFight === "FIGHT") {
@@ -65,6 +65,8 @@ var startGame = function () {
   playerAttack = 10;
   playerMoney = 10;
 
+  debugger;
+
   for (var i = 0; i < enemyNames.length; i++) {
     if (playerHealth > 0) {
       // let user know what round they are in, remember that arrays start at 0 so it needs to have 1 added to it
@@ -86,7 +88,9 @@ var startGame = function () {
       break;
     }
   }
+
   endGame();
+  //startGame();
 }
 
 var endGame = function () {
